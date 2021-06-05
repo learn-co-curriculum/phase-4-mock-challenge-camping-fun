@@ -7,13 +7,13 @@ RSpec.describe Camper, type: :model do
     let(:camper) { Camper.create(name: 'Caitlin', age: 8) }
     let(:activity) { Activity.create(name: 'Archery', difficulty: 2) }
 
-    it 'has many Signups' do
+    it 'can access the associated signups' do
       signup = Signup.create(camper_id: camper.id, activity_id: activity.id, time: 11)
 
       expect(camper.signups).to include(signup)
     end
 
-    it 'has many Activities through Signups' do
+    it 'can access the associated activities' do
       Signup.create(camper_id: camper.id, activity_id: activity.id, time: 11)
 
       expect(camper.activities).to include(activity)

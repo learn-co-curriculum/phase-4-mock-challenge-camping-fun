@@ -7,13 +7,13 @@ RSpec.describe Signup, type: :model do
 
   describe "relationships" do
     
-    it 'belongs to a Camper' do
+    it 'can access the associated camper' do
       signup = Signup.create(camper_id: camper.id, activity_id: activity.id, time: 11)
 
       expect(signup.camper).to eq(camper)
     end
 
-    it 'belongs to an Activity' do
+    it 'can access the associated activity' do
       signup = Signup.create(camper_id: camper.id, activity_id: activity.id, time: 11)
 
       expect(signup.activity).to eq(activity)

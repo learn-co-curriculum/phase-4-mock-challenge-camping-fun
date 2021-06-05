@@ -15,6 +15,7 @@ function NewSignup({ camperId, onAddActivity }) {
   function handleSubmit(e) {
     e.preventDefault();
     const formData = {
+      activity_id: Number(activityId),
       camper_id: camperId,
       time: Number(time),
     };
@@ -26,7 +27,12 @@ function NewSignup({ camperId, onAddActivity }) {
       body: JSON.stringify(formData),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((activity) => onAddActivity(activity));
+        r.json().then((activity) => {
+          setTime("");
+          setActivityId("");
+          setErrors([]);
+          onAddActivity(activity);
+        });
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

@@ -19,7 +19,12 @@ function NewCamper({ onAddCamper }) {
       body: JSON.stringify(formData),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((camper) => onAddCamper(camper));
+        r.json().then((camper) => {
+          setName("");
+          setAge("");
+          setErrors([]);
+          onAddCamper(camper);
+        });
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

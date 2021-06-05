@@ -5,10 +5,9 @@ import Home from "./Home";
 function App() {
   return (
     <main>
-      <h1>Camping Fun</h1>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
+      <h1>
+        <Link to="/">Camping Fun</Link>
+      </h1>
       <Switch>
         <Route exact path="/">
           <Home />

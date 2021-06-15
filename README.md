@@ -46,7 +46,7 @@ Depending on your preference, you can either check your progress by:
 - Running `rspec` and seeing if your code passes the tests
 - Running the React application in the browser and interacting with the API via
   the frontend
-- Running the Rails server and using Postman make requests
+- Running the Rails server and using Postman to make requests
 
 ## Models
 
@@ -79,7 +79,7 @@ rails db:migrate db:seed
 Add validations to the `Camper` model:
 
 - must have a `name`
-- must have a `age` between 8 and 18
+- must have an `age` between 8 and 18
 
 Add validations to the `Signup` model:
 
@@ -198,7 +198,7 @@ Return JSON data in the format below:
 
 If the `Activity` exists, it should be removed from the database, along with
 any `Signup`s that are associated with it (a `Signup` belongs
-to a `Activity`, so you need to delete the `Signup`s before the
+to an `Activity`, so you need to delete the `Signup`s before the
 `Activity` can be deleted).
 
 After deleting the `Activity`, return an _empty_ response body, along with the

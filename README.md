@@ -15,9 +15,9 @@ deliverables below.
 
 To download the dependencies for the frontend and backend, run:
 
-```sh
-bundle install
-npm install --prefix client
+```console
+$ bundle install
+$ npm install --prefix client
 ```
 
 There is some starter code in the `db/seeds.rb` file so that once you've
@@ -25,14 +25,14 @@ generated the models, you'll be able to create data to test your application.
 
 You can run your Rails API on [`localhost:3000`](http://localhost:3000) by running:
 
-```sh
-rails s
+```console
+$ rails s
 ```
 
 You can run your React app on [`localhost:4000`](http://localhost:4000) by running:
 
-```sh
-npm start --prefix client
+```console
+$ npm start --prefix client
 ```
 
 You are not being assessed on React, and you don't have to update any of the React
@@ -67,8 +67,8 @@ Add any code needed in the model files to establish the relationships.
 
 Then, run the migrations and seed file:
 
-```sh
-rails db:migrate db:seed
+```console
+$ rails db:migrate db:seed
 ```
 
 > If you aren't able to get the provided seed file working, you are welcome to

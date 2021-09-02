@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import NewSignup from './NewSignup'
 
 function Camper() {
   const [{ data: camper, error, status }, setCamper] = useState({
@@ -23,6 +24,17 @@ function Camper() {
     });
   }, [id]);
 
+  function handleAddActivity(newActivity) {
+    setCamper({
+      error,
+      status,
+      data: {
+        ...camper,
+        activities: [...camper.activites, newActivity]
+      }
+    })
+  }
+
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") return <h2>Error: {error}</h2>;
 
@@ -37,6 +49,7 @@ function Camper() {
         ))}
       </ul>
       <hr />
+      <NewSignup onAddActivity={handleAddActivity} camperId={camper.id} />
     </div>
   );
 }

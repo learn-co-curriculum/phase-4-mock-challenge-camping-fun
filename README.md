@@ -100,12 +100,36 @@ Return JSON data in the format below:
   {
     "id": 1,
     "name": "Caitlin",
-    "age": 8
+    "age": 8,
+    "activities": [
+      {
+        "id": 1,
+        "name": "Archery",
+        "difficulty": 2
+      },
+      {
+        "id": 2,
+        "name": "Swimming",
+        "difficulty": 3
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Lizzie",
-    "age": 9
+    "age": 9,
+    "activities": [
+      {
+        "id": 2,
+        "name": "Swimming",
+        "difficulty": 3
+      },
+      {
+        "id": 1,
+        "name": "Archery",
+        "difficulty": 2
+      }
+    ]
   }
 ]
 ```

@@ -16,7 +16,7 @@ function NewSignup({ camperId, onAddActivity }) {
     e.preventDefault();
     const formData = {
       camper_id: camperId,
-      activity_id: activityId,
+      activity_id: Number(activityId),
       time: Number(time),
     };
     fetch("/signups", {

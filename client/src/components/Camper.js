@@ -25,12 +25,13 @@ function Camper() {
   }, [id]);
 
   function handleAddActivity(newActivity) {
+    console.log(camper, newActivity)
     setCamper({
       error,
       status,
       data: {
         ...camper,
-        activities: [...camper.activites, newActivity]
+        activities: [...camper.activities, newActivity]
       }
     })
   }

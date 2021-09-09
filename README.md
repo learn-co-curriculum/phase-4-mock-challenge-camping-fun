@@ -93,7 +93,9 @@ specified along with the appropriate HTTP verb.
 
 ### GET /campers
 
-Return JSON data in the format below:
+Return JSON data in the format below. **Note**: you should return a JSON
+response in this format, without any additional nested data related to each
+camper.
 
 ```json
 [
@@ -112,7 +114,10 @@ Return JSON data in the format below:
 
 ### GET /campers/:id
 
-If the `Camper` exists, return JSON data in the format below:
+If the `Camper` exists, return JSON data in the format below. **Note**: you will
+need to serialize the data for this response differently than for the
+`GET /campers` route. Make sure to include an array of activities for each
+camper.
 
 ```json
 {

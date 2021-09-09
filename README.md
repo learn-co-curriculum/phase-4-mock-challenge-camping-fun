@@ -52,8 +52,8 @@ Depending on your preference, you can either check your progress by:
 
 You need to create the following relationships:
 
-- A `Camper` has many `Activity`s through `Signup`s
-- An `Activity` has many `Camper`s through `Signup`s
+- A `Camper` has many `Signups`, and has many `Activity`s through `Signup`s
+- An `Activity` has many `Signups`, and has many has many `Camper`s through `Signup`s
 - A `Signup` belongs to a `Camper` and belongs to a `Activity`
 
 Start by creating the models and migrations for the following database tables:

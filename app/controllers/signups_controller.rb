@@ -2,8 +2,8 @@ class SignupsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     
     def create
-        signup=Signup.create(signup_params)
-        render signup.activity
+        signup=Signup.create!(signup_params)
+        render json: signup.activity, status: :created
     end
 
     private 
@@ -13,6 +13,6 @@ class SignupsController < ApplicationController
     end
 
     def render_unprocessable_entity_response(invalid)
-        render json: {error: invalid.record.errors}
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 end
